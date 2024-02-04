@@ -1,5 +1,6 @@
 import { useState, useCallback, useEffect, useRef } from 'react'
 
+const backgroundImageUrl = 'https://www.collaboris.com/wp-content/uploads/2023/07/cyber-security-password-scaled.jpg?_t=1688465515'; // Replace with the actual URL
 
 
 function App() {
@@ -37,10 +38,22 @@ function App() {
   useEffect(() => {
     passwordGenerator()
   }, [length, numberAllowed, charAllowed, passwordGenerator])
+  
   return (
-    
-    <div className="w-full max-w-md mx-auto shadow-md rounded-lg px-4 py-3 my-8 bg-gray-800 text-orange-500">
-      <h1 className='text-white text-center my-3'>Password generator</h1>
+    <>
+<div className="flex flex-col items-center justify-center h-screen bg-yellow-300 backgr"
+      style={{
+        backgroundImage: `url(${backgroundImageUrl})`,
+        
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        height: '100vh',
+      }}
+    >
+      
+    <div className="w-full max-w-md mx-auto shadow-md rounded-lg px-4 py-3 my-8 bg-gray-500 text-orange-600 ">
+      <h1 className='text-black text-center my-3'>Password generator</h1>
     <div className="flex shadow rounded-lg overflow-hidden mb-4">
         <input
             type="text"
@@ -92,7 +105,8 @@ function App() {
       </div>
     </div>
 </div>
-    
+</div>
+    </>
   )
 }
 
